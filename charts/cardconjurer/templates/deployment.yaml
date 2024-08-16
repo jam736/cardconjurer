@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hl-cardconjurer-deployment
+  labels:
+    app: carconjurer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cardconjurer
+  template:
+    metadata:
+      labels:
+        app: cardconjurer
+    spec:
+      containers:
+        - name: carconjurer-app
+          image: cardconjurer-client:latest
+          imagePullPolicy: Never
+          volumeMounts:
+            - name: local-art
+              mountPath: /usr/share/nginx/html/local_art
+              readOnly: true
+      volumes:
+        - name: local-art
+          hostPath:
+            path: "/run/desktop/mnt/host/g/projects/cardconjurer/local_art"
+            type: Directory
+      ports:
+        - containerPort: 4242
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+        limits:
+          cpu: "200m"
+          memory: "256Mi"
+          

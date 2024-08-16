@@ -30,3 +30,6 @@ yarn-debug.log*
 cardconjurer.iml
 access.log
 error.log
+
+# volumemount
+local_art
