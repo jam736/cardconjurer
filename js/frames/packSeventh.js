@@ -66,11 +66,17 @@ document.querySelector('#loadFrameVersion').onclick = async function() {
 		rules: {name:'Rules Text', text:'', x:0.128, y:0.6067, width:0.744, height:0.2724, size:0.0358},
 		pt: {name:'Power/Toughness', text:'', x:0.8074, y:0.9043, width:0.1367, height:0.0429, size:0.0429, oneLine:true, align:'center', color:'white', shadowX:0.002, shadowY:0.0015}
 	});
+	//original bottom info
+	// loadBottomInfo({
+	// 	top: {text:'Illus. {elemidinfo-artist}', x:0.1, y:1908/2100, width:0.8, height:0.0267, oneLine:true, size:0.0267, align:'center', shadowX:0.0021, shadowY:0.0015, color:'white'},
+	// 	wizards: {name:'wizards', text:'\u2122 & \u00a9 {elemidinfo-year} Wizards of the Coast, Inc. {elemidinfo-number}', x:0.1, y:1933/2100, width:0.8, height:0.0172, oneLine:true, size:0.0172, align:'center', shadowX:0.0014, shadowY:0.001, color:'white'},
+	// 	bottom: {text:'NOT FOR SALE   CardConjurer.com', x:0.1, y:1973/2100, width:0.8, height:26/2100, oneLine:true, size:26/2100, align:'center', shadowX:0.0014, shadowY:0.001, color:'white'}
+	// });
 	//bottom info
 	loadBottomInfo({
-		top: {text:'Illus. {elemidinfo-artist}', x:0.1, y:1908/2100, width:0.8, height:0.0267, oneLine:true, size:0.0267, align:'center', shadowX:0.0021, shadowY:0.0015, color:'white'},
-		wizards: {name:'wizards', text:'\u2122 & \u00a9 {elemidinfo-year} Wizards of the Coast, Inc. {elemidinfo-number}', x:0.1, y:1933/2100, width:0.8, height:0.0172, oneLine:true, size:0.0172, align:'center', shadowX:0.0014, shadowY:0.001, color:'white'},
-		bottom: {text:'NOT FOR SALE   CardConjurer.com', x:0.1, y:1973/2100, width:0.8, height:26/2100, oneLine:true, size:26/2100, align:'center', shadowX:0.0014, shadowY:0.001, color:'white'}
+		topLeft: {text:'Illus. {elemidinfo-artist}', x:0.1, y:1868/2100, width:0.8, height:0.0267, oneLine:true, size:0.0267, align:'center', shadowX:0.0021, shadowY:0.0015, color:card.bottomInfoColor},
+		midLeft: {text:'{elemidinfo-set} \u2022 {elemidinfo-rarity} \u2022 {kerning3}{elemidinfo-number}{kerning0}', x:0.1, y:1919/2100, width:0.8, height:0.0267, oneLine:true, size:0.0171, align:'center', shadowX:0.0021, shadowY:0.0015, color:card.bottomInfoColor},
+		note: {text:'{elemidinfo-note}', x:0.0647, y:1963/2100, width:0.8, height:0.0267, oneLine:true, size:0.0171, align:'left', shadowX:0.0021, shadowY:0.0015, color:card.bottomInfoColor}
 	});
 }
 //loads available frames
